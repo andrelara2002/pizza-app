@@ -7,3 +7,5 @@ Olá! Seja bem vindo ao meu projeto, estou desenvolvendo esse aplicativo em Reac
 Tecnologias utilizadas até o momento
 - Expo (React native)
 - Axios (HTTP requests
+
+(No momento ainda não defini uma UI para o sistema, portanto não existem telas ainda)
