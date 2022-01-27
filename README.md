@@ -10,7 +10,7 @@ Tecnologias utilizadas até o momento
 
 Links úteis
 --------------------------------------------
-[Servidor](https://github.com/andrelara2002/pizza-app-server)
-[Roadmap de desenvolvimento](https://www.figma.com/file/UteSqjB9wpXD5e6hTZ9w5k/Pizza-app---Roadmap?node-id=0%3A1)
+- [Servidor](https://github.com/andrelara2002/pizza-app-server)
+- [Roadmap de desenvolvimento](https://www.figma.com/file/UteSqjB9wpXD5e6hTZ9w5k/Pizza-app---Roadmap?node-id=0%3A1)
 
 (No momento ainda não defini uma UI para o sistema, portanto não existem telas ainda)
