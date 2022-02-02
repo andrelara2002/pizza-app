@@ -1,4 +1,4 @@
-const api = require('../services/api');
+import api from './api'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const getCart = async () => {
@@ -27,7 +27,7 @@ export const getOrderById = async (id, token) => {
 }
 
 export const updateOrderStatus = async (id, token, status) => {
-    return await api.put('/order/changestatus', { id, token, status })
+    return await api.patch('/order/changestatus', { id, token, status })
 }
 
 export const updateOrder = async (obj) => {

@@ -2,7 +2,15 @@ import { createStore } from 'redux';
 
 const initialState = {
     app: {
-        colors: [],
+        colors: {
+            card: "#f5f5f5",
+            text: "#0f0f0f",
+            error: "#f53232",
+            primary100: "#f9c415",
+            primary40: "#3c2e02",
+            secondary100: "#54d463",
+            secondary40: "#061808"
+        },
         language: 'pt-BR',
         data: {},
         theme: 'light'
