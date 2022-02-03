@@ -9,22 +9,21 @@ import { useSelector } from 'react-redux';
 
 export default function Input({
     label, value, onChangeText, placeholder,
-    autocomplete
+    autocomplete, secureTextEntry
 }) {
-    const colors = useSelector(state => state)
-    console.log(colors)
     const styles = StyleSheet.create({
         container: {
-            height: 50,
             width: "100%",
-            padding: 20,
+            marginTop: 20
         },
         label: {
             marginBottom: 10,
-            fontSize: 16
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: '#3c2e02'
         },
         input: {
-            fontSize: 20,
+            fontSize: 24,
             borderRadius: 10,
             padding: 20,
             alignItems: 'center',
@@ -39,9 +38,11 @@ export default function Input({
             <TextInput
                 style={styles.input}
                 value={value}
-                onChangeText={onChangeText}
+                onChangeText={e => { onChangeText(e) }}
                 autoComplete={autocomplete}
-                />
+                placeholder={placeholder}
+                secureTextEntry={secureTextEntry}
+            />
         </TouchableOpacity>
     )
 }

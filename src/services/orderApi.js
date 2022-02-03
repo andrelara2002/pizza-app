@@ -12,10 +12,6 @@ export const deleteCart = async () => {
 export const createOrder = async () => {
     const order = await getCart();
     return await api.post('/order', { order: order })
-        .then(order => {
-            await getCart();
-            return order
-        })
 }
 
 export const getUserOrders = async (token) => {
