@@ -22,3 +22,5 @@ Versão 0.1 (Em andamento)
 - Conexão de API
 - Métodos para comunicação com API
 - Configuração do React Redux para o projeto
+- Configurando tela de login e criação do usuário
+- Criptografia dos dados de senha utilizando bcryptjs (PENDENTE)
