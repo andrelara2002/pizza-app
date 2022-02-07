@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import store from './src/services/redux'
 import AppLoading from 'expo-app-loading';
 import LoginView from './src/pages/Login/LoginView'
+import Navigator from './src/navigation/routes';
 
 import {
   useFonts,
@@ -30,11 +31,11 @@ export default function App() {
   if (!fontsLoaded) return <AppLoading />
 
   return (
-    <Provider store={store}>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <LoginView />
-      </View>
+    <Provider
+      store={store}>
+      <Navigator
+        style={styles.container}s
+      />
     </Provider>
   );
 }

@@ -5,7 +5,7 @@ import {
 } from "react-native";
 
 export default function Button(
-    { text, onPress, red, active = true, outline }
+    { text, onPress, red, active = true, outline, error = { state: false, message: "" } }
 ) {
     const styles = StyleSheet.create({
         container: {

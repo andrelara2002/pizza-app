@@ -14,7 +14,12 @@ export default function LoginView(props) {
 
 
     return (
-        <View style={{ justifyContent: 'flex-end', height: '100%' }}>
+        <View style={
+            {
+                justifyContent: 'flex-end',
+                height: '100%',
+                padding: 20
+            }}>
             <Input
                 label={"Email ou documento"}
                 autocomplete={'email'}
