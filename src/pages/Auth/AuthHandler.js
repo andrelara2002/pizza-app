@@ -1,28 +1,44 @@
-import { AsyncStorage } from "react-native";
-import { useNavigation } from '@react-navigation/native';
-import { getUser } from "../../services/UserApi";
 import React from 'react'
+import { View, Text } from "react-native";
 import AppLoading from 'expo-app-loading'
+import { useNavigation } from '@react-navigation/native'
+import { getToken, getUserById } from '../../services/userApi';
+import { useDispatch } from 'react-redux';
 
-export default function AuthHandler() {
-    const [userToken, setToken] = React.useState({})
-    const navigation = useNavigation()
+export default function uthHandler(props) {
+    let token = null;
+    const { navigation } = props
+    const dispatch = useDispatch()
 
-    async function getData() {
-        const token = await getUser()
-        setToken(token)
+    const getData = async () => {
+        token = await getToken()
+        console.log('Token: ', token)
+        redirect()
     }
 
-    function redirect() {
-        if (userToken !== null) navigation.navigate('HomeStack')
-        else navigation.navigate('LoginStack')
+    React.useEffect(() => {
+        getData()
+    }, [])
+
+    const redirect = async () => {
+        if (token !== undefined) {
+            const userData = await getUserById(token)
+            console.log('UserData: ', userData)
+            if (userData.data.status) {
+                dispatch({
+                    type: 'STORE_USER_DATA',
+                    payload: userData
+                })
+                navigation.navigate('HomeView')
+            }
+            else console.warn('User not found')
+        }
+        else {
+            navigation.navigate('LoginView')
+        }
     }
 
-
-    return <AppLoading
-        startAsync={getData}
-        onFinish={redirect}
-        onError={console.warn}
-    />
-
+    return <View>
+        <Text>Loading</Text>
+    </View>
 }

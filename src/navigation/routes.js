@@ -2,17 +2,31 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import LoginView from '../pages/Login/LoginView';
 import HomeView from '../pages/Home/HomeView';
+import AuthHandler from '../pages/Auth/AuthHandler';
 
-const RootStack = createStackNavigator(
-    {
-        LoginStack: LoginView,
-        HomeStack: HomeView
+import { getUser } from '../services/userApi';
+
+const AuthStack = createStackNavigator({
+    AuthHandler: {
+        screen: AuthHandler,
+        navigationOptions: {
+            headerShown: false,
+        }
     },
-    {
-        initialRouteName: 'LoginStack',
-        headerMode: 'none',
+    LoginView: {
+        screen: LoginView,
+        navigationOptions: {
+            headerShown: false
+        }
+    },
+    HomeView: {
+        screen: HomeView,
+        navigationOptions: {
+            headerShown: false
+        }
     }
+})
+const Routes = createAppContainer(
+    AuthStack
 )
-
-const RootStackContainer = createAppContainer(RootStack)
-export default RootStackContainer;
+export default Routes

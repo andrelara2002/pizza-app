@@ -3,13 +3,19 @@ import React from 'react';
 import { Button, Input, Spacer } from '../../components/StyledComponents'
 import { authenticateUser } from '../../services/userApi'
 
-export default function LoginView(props) {
+export default function LoginView({ navigation }) {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
+    const [errorMessage, setErrorMessage] = React.useState(null)
 
     async function onLogin() {
         const auth = await authenticateUser(email, password)
-        console.log(auth.data)
+        console.log(auth)
+        if (auth.status === 200) {
+            navigation.navigate('AuthHandler')
+        } else {
+            setErrorMessage('Usuário ou senha incorretos')
+        }
     }
 
 
@@ -22,6 +28,7 @@ export default function LoginView(props) {
             }}>
             <Input
                 label={"Email ou documento"}
+                onError={errorMessage}
                 autocomplete={'email'}
                 value={email}
                 onChangeText={setEmail}

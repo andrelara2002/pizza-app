@@ -1,6 +1,8 @@
-import { createStore } from 'redux';
+import { createStore } from "redux";
 
 const initialState = {
+    user: null,
+    token: null,
     app: {
         colors: {
             card: "#f5f5f5",
@@ -14,13 +16,38 @@ const initialState = {
         language: 'pt-BR',
         data: {},
         theme: 'light'
-    },
-    cart: []
+    }
 }
 
 const reducer = (state = initialState, action) => {
-    switch (action) {
-        case 'CHANGE_APP_THEME':
+    switch (action.type) {
+        case "STORE_USER_DATA":
+            return {
+                ...state,
+                user: action.payload
+            }
+        case "STORE_TOKEN":
+            return {
+                ...state,
+                token: action.payload
+            }
+        case "STORE_COLORS":
+            return {
+                ...state,
+                app: {
+                    ...state.app,
+                    colors: action.payload
+                }
+            }
+        case "STORE_LANGUAGE":
+            return {
+                ...state,
+                app: {
+                    ...state.app,
+                    language: action.payload
+                }
+            }
+        case "CHANGE_THEME":
             return {
                 ...state,
                 app: {
@@ -28,11 +55,8 @@ const reducer = (state = initialState, action) => {
                     theme: action.payload
                 }
             }
-        case 'ADD_CART_ITEM':
-            return { ...state, cart: state.cart.push(payload) }
-        case 'REMOVE_CART_ITEM':
-            return { ...state, cart: state.cart.splice(payload, 1) }
+        default:
+            return state
     }
 }
-
-export default createStore(reducer);
+export default createStore(reducer)
