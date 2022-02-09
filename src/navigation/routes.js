@@ -3,8 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import LoginView from '../pages/Login/LoginView';
 import HomeView from '../pages/Home/HomeView';
 import AuthHandler from '../pages/Auth/AuthHandler';
-
-import { getUser } from '../services/userApi';
+import RegisterView from '../pages/Login/RegisterView'
 
 const AuthStack = createStackNavigator({
     AuthHandler: {
@@ -15,6 +14,12 @@ const AuthStack = createStackNavigator({
     },
     LoginView: {
         screen: LoginView,
+        navigationOptions: {
+            headerShown: false
+        }
+    },
+    RegisterView: {
+        screen: RegisterView,
         navigationOptions: {
             headerShown: false
         }

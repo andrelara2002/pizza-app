@@ -9,7 +9,8 @@ import { useSelector } from 'react-redux';
 
 export default function Input({
     label, value, onChangeText, placeholder,
-    autocomplete, secureTextEntry
+    autocomplete, secureTextEntry, textContentType,
+    keyboardType
 }) {
     const styles = StyleSheet.create({
         container: {
@@ -42,6 +43,8 @@ export default function Input({
                 autoComplete={autocomplete}
                 placeholder={placeholder}
                 secureTextEntry={secureTextEntry}
+                textContentType={textContentType}
+                keyboardType={keyboardType}
             />
         </TouchableOpacity>
     )

@@ -10,6 +10,7 @@ export default function HomeView({ navigation }) {
 
     async function getData() {
         console.log('UserData: ', userData)
+        if (!userData.token) navigation.navigate('AuthHandler')
     }
     React.useEffect(() => {
         getData()

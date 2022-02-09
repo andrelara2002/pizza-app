@@ -15,7 +15,7 @@ export const authenticateUser = async (email, password) => {
         console.log(res.data)
         return res.data.token
     }
-    else return res
+    else { return { status: 400, message: "User not found" } }
 }
 //Refresh the user token when is close to spoil
 export const refreshToken = async (token) => {

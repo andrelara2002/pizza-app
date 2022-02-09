@@ -8,14 +8,26 @@ export default function LoginView({ navigation }) {
     const [password, setPassword] = React.useState('')
     const [errorMessage, setErrorMessage] = React.useState(null)
 
+    React.useEffect(() => {
+        console.log('Login mounted')
+    })
     async function onLogin() {
-        const auth = await authenticateUser(email, password)
-        console.log(auth)
-        if (auth.status === 200) {
-            navigation.navigate('AuthHandler')
-        } else {
+        try {
+            const auth = await authenticateUser(email, password)
+            console.log(`Token: ${auth}`)
+            if (auth) {
+                console.log('Navegando para authhandler')
+                navigation.navigate('AuthHandler')
+            } else {
+                console.log(`Got status: ${auth.status}`)
+            }
+        } catch (err) {
             setErrorMessage('Usuário ou senha incorretos')
         }
+    }
+
+    function onSignUp() {
+        navigation.navigate('RegisterView')
     }
 
 
@@ -48,7 +60,7 @@ export default function LoginView({ navigation }) {
             <Button
                 text={'Cadastrar'}
                 outline={true}
-                onPress={() => { console.log('Cadastrando') }}
+                onPress={onSignUp}
             />
         </View>
     )
