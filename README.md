@@ -1,16 +1,16 @@
+>  **On Hold**: This App is being reworked, it will be replaced with a new project using flutter framework
+
 # Pizza App
-Projeto pessoal para uma pizzaria da região
+An personal project for a neighbour pizzaria
 --------------------------------------------
 
-Olá! Seja bem vindo ao meu projeto, estou desenvolvendo esse aplicativo em React Native melhorar minhas habilidades no desenvolvimento mobile. Como ideia principal vou fazer a releitura de um aplicativo de uma pizzaria próxima da minha casa, fazendo uma proposta totalmente nova e moderna, assim como aplicando o estilo material you.
+Hello! Be welcome to my project, I'm developing this app in React Native to improve my skills in hybrid development. My main idea was to make a relecture of a pizzeria app next to my house. It's a totally new and modern approach, making use of the new Material You design guideline.
 
-Tecnologias utilizadas até o momento
+## Used Technologies
 - Expo (React native)
 - Axios (HTTP requests
 
-Links úteis
+# Links
 --------------------------------------------
-- [Servidor](https://github.com/andrelara2002/pizza-app-server)
-- [Roadmap de desenvolvimento](https://www.figma.com/file/UteSqjB9wpXD5e6hTZ9w5k/Pizza-app---Roadmap?node-id=0%3A1)
-
-(No momento ainda não defini uma UI para o sistema, portanto não existem telas ainda)
+- [Server](https://github.com/andrelara2002/pizza-app-server)
+- [Development Roadmap](https://www.figma.com/file/UteSqjB9wpXD5e6hTZ9w5k/Pizza-app---Roadmap?node-id=0%3A1)
